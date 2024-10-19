@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    *{
+        align-items: center;
+        text-align: center;
+        padding-top: 10px;
+        background-color: aquamarine;
+    }
+    #result{
+           font-family:'Times New Roman';
+        }
+        #buttona{
+            border:none;
+            cursor: pointer;
+            background-color: rgba(17, 226, 245, 0.487);
+            color: rgb(4, 0, 255);
+            outline: 6px solid rgba(234, 154, 5, 0.891);
+        }
+    @media (min-width:200px) and (max-width:500px){
+        *{
+            font-size: 25px;
+            margin-bottom: 70px;
+        }
+    }
+    @media (min-width:500px) and (max-width:800px){
+        *{
+            font-size: 35px;
+            margin-bottom: 70px;
+        }
+    }
+    @media (min-width:800px){
+        *{
+            font-size: 40px;
+            margin-bottom: 80px;
+        }
+    }
+
+</style>
+<body>
+    <p id="result">The Corressponding date of {{ dyear }}/{{ dmonth }}/{{ dday }} in {{ d_from }} is {{ conv_data }} </p>
+    <button id='buttona' type="button" onclick="location.href='{% url 'home' %}'">Convert again</button>
+</body>
+</html>

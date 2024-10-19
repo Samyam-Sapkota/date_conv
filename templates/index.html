@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Converter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+    @media (max-width:284px){
+               
+               #header1{
+                   font-size: 25px;            
+               }   
+               #take_date{
+                   padding-top: 20px;
+                   font-size: 16px;
+                  }
+                  #date1{
+                    margin-top: 10px;
+                   font-size: 13px;
+                   margin-bottom: 25px;
+                  }
+                  #buttona{
+                   padding: 5px 10px 5px 10px;
+                   margin-top: 10px;
+                   margin-left: 18px;
+                   font-size: 12px;
+                   }
+       
+                   #buttonb{
+                   padding: 5px 10px 5px 10px;
+                   margin-top: 25px;
+                   font-size: 12px;
+                   margin-left: 18px;
+                   
+                   }
+               }
+
+      @media (min-width:285px) and (max-width:350px){
+               
+        #header1{
+            font-size: 45px;            
+        }   
+        #take_date{
+            padding-top: 20px;
+            font-size: 16px;
+           }
+           #date1{
+            font-size: 13px;
+            margin-bottom: 25px;
+           }
+           #buttona{
+            padding: 5px 10px 5px 10px;
+            margin-top: 15px;
+            margin-left: 20px;
+            font-size: 15px;
+            }
+
+            #buttonb{
+            padding: 5px 10px 5px 10px;
+            margin-top: 35px;
+            font-size: 15px;
+            margin-left: 20px;
+            
+            }
+        }
+
+        @media (min-width:351px) and (max-width:500px) {
+                  
+        #header1{
+          font-size: 60px;         
+        }
+            #take_date{
+            padding-top: 25px;
+            font-size: 20px;
+           }
+           #date1{
+            font-size: 18px;
+            margin-bottom: 30px;
+           }
+           #buttona{
+            
+            padding: 5px 10px 5px 10px;
+            margin-top: 15px;
+            margin-left: 20px;
+            font-size: 15px;
+            }
+            #buttonb{
+            
+            padding: 5px 10px 5px 10px;
+            margin-top: 15px;
+            margin-left: 25px;
+            font-size: 15px;
+            }
+        }
+        @media (min-width:500px) and (max-width:800px) {
+                  
+                  #header1{
+                    font-size: 65px;         
+                  }
+                      #take_date{
+                      padding-top: 25px;
+                      font-size: 33px;
+                     }
+                     #date1{
+                      font-size: 25px;
+                      margin-bottom: 40px;
+                     }
+                     #buttona{
+                      
+                      padding: 5px 10px 5px 10px;
+                      margin-top: 15px;
+                      font-size: 24px;
+                      margin-left: 28px;
+                      }
+                      #buttonb{
+                      
+                      padding: 5px 10px 5px 10px;
+                      margin-top: 15px;
+                      margin-left: 30px;
+                      font-size: 24px;
+                      }
+                  }
+        @media (min-width:800px) {
+                  
+                  #header1{
+                    font-size: 70px;         
+                  }
+                      #take_date{
+                      padding-top: 25px;
+                      font-size: 33px;
+                     }
+                     #date1{
+                      font-size: 28px;
+                      margin-bottom: 50px;
+                     }
+                     #buttona{
+                      
+                      padding: 5px 10px 5px 10px;
+                      margin-top: 15px;
+                      font-size: 24px;
+                      margin-left: 30px;
+                      }
+                      #buttonb{
+                      
+                      padding: 5px 10px 5px 10px;
+                      margin-top: 15px;
+                      font-size: 24px;
+                      margin-left: 55px;
+                      }
+                  }            
+
+
+        *{
+            background-color: aquamarine;
+            align-items: center;
+            text-align: center;
+        }
+
+        #date1{
+                      border: none;
+                      outline: 6px solid rgba(234, 154, 5, 0.891);
+                      cursor: pointer;
+                      
+                     }
+            /* input[type="date"]::-webkit-calendar-picker-indicator {
+            display: none;
+        } */
+
+        #buttona{
+            background-color: rgba(17, 226, 245, 0.487);
+            color: rgb(4, 0, 255);
+            outline: 6px solid rgba(234, 154, 5, 0.891);
+            appearance: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #buttonb{
+            background-color: rgba(17, 226, 245, 0.487);
+            color: rgb(4, 0, 255);
+            outline: 6px solid rgba(234, 154, 5, 0.891);
+            appearance: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #header1{
+            
+            text-align: center;
+            color: rgb(252, 9, 9);
+            
+        }
+        #dateid{
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header1">Welcome To Date Converter</h1>
+    <form action="{% url 'pst_data' %}" method="post">
+        {% csrf_token %}
+    <div id="take_date">
+        <label for="date" id="dateid">Enter the date :</label>
+        <input type="date" id="date1" name="date1">
+    </div>
+    <button id="buttona" type="submit" value="adtobs" name="ad2bs" >Convert AD to BS</button>
+    <button id="buttonb" type="submit" value="bstoad" name="bs2ad" >Convert BS to AD</button>
+    </form>
+   
+</body>
+
+</html>
